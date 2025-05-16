@@ -1,138 +1,80 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexiFit Singapore</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-white text-gray-800">
 
-export default function FlexiFitWebsite() {
-  return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <header className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-10 text-center">
-        <h1 className="text-5xl font-bold mb-3">FlexiFit</h1>
-        <p className="text-xl">Singapore’s Smartest Space-Saving Home Gym</p>
-        <img src="/images/flexifit-home-gym-banner.png" alt="FlexiFit Home Gym" className="w-full mt-6 rounded-xl shadow-lg" />
-      </header>
+  <header class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-10 text-center">
+    <h1 class="text-5xl font-bold">FlexiFit</h1>
+    <p class="text-xl mt-2">Singapore’s Smartest Space-Saving Home Gym</p>
+    <img src="/images/flexifit-home-gym-banner.png" alt="FlexiFit Home Gym" class="w-full mt-6 rounded-xl shadow-lg">
+  </header>
 
-      <main className="p-6">
-        <Tabs defaultValue="about" className="w-full">
-          <TabsList className="grid grid-cols-3 gap-4 mb-6">
-            <TabsTrigger value="about">About</TabsTrigger>
-            <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="contact">Contact Us</TabsTrigger>
-          </TabsList>
+  <main class="p-6">
+    <nav class="mb-6">
+      <button class="px-4 py-2 bg-indigo-500 text-white rounded">About</button>
+      <button class="px-4 py-2 ml-2 bg-gray-200 rounded">Products</button>
+      <button class="px-4 py-2 ml-2 bg-gray-200 rounded">Contact Us</button>
+    </nav>
 
-          <TabsContent value="about">
-            <section className="space-y-4">
-              <h2 className="text-3xl font-bold">About FlexiFit</h2>
-              <p>FlexiFit is a smart, space-saving fitness solution designed for modern living in Singapore. Whether you're in a condo, HDB, or small flat, we help you transform even the tiniest corner of your home into a complete gym setup.</p>
-              <h3 className="text-xl font-semibold mt-4">Our Unique Proposition:</h3>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✅ Modular equipment that folds away neatly</li>
-                <li>✅ Smart AI app for real-time feedback & custom workouts</li>
-                <li>✅ Elegant design that complements your home</li>
-                <li>✅ Tailored for Singapore's compact living spaces</li>
-              </ul>
-              <video controls className="w-full rounded-xl shadow-md mt-6">
-                <source src="/videos/flexifit-demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="mt-10">
-                <h3 className="text-xl font-semibold mb-4">What Our Users Say</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="shadow-md p-4">
-                    <p className="italic">“Perfect for my 3-room HDB flat! It’s easy to use and stores away quickly.”</p>
-                    <p className="font-semibold mt-2">– Chloe L., Singapore</p>
-                  </Card>
-                  <Card className="shadow-md p-4">
-                    <p className="italic">“I save so much time avoiding gym commutes. Now I train in my bedroom with FlexiFit.”</p>
-                    <p className="font-semibold mt-2">– Marcus T., Singapore</p>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </TabsContent>
+    <section>
+      <h2 class="text-3xl font-bold">About FlexiFit</h2>
+      <p class="mt-4">FlexiFit provides smart, space-saving gym solutions tailored specifically for Singaporean homes, transforming even small spaces into effective workout areas.</p>
+      <ul class="list-disc ml-6 mt-4">
+        <li>Modular and compact equipment.</li>
+        <li>AI-powered app for customized workouts.</li>
+        <li>Sleek designs for home integration.</li>
+        <li>Designed for Singapore’s compact spaces.</li>
+      </ul>
+      <video controls class="w-full rounded-xl shadow-md mt-6">
+        <source src="/videos/flexifit-demo.mp4" type="video/mp4">
+      </video>
+    </section>
 
-          <TabsContent value="products">
-            <section className="grid md:grid-cols-2 gap-6">
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/flexirack.jpg" alt="FlexiRack" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiRack™</h2>
-                  <p>Foldable, wall-mounted resistance training system—ideal for Singapore condos and flats.</p>
-                </CardContent>
-              </Card>
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/flexibench.jpg" alt="FlexiBench" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiBench™</h2>
-                  <p>Multi-angle bench with smart sensors and hidden weight storage—perfect for compact bedrooms.</p>
-                </CardContent>
-              </Card>
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/fleximat.jpg" alt="FlexiMat" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiMat™</h2>
-                  <p>Smart yoga mat with AI posture tracking, loved by Singaporean yogis and desk workers alike.</p>
-                </CardContent>
-              </Card>
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/flexibands.jpg" alt="FlexiBands" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiBands™</h2>
-                  <p>High-resistance bands for strength, toning, and mobility workouts. Compact and powerful.</p>
-                </CardContent>
-              </Card>
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/flexiball.jpg" alt="FlexiBall" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiBall™</h2>
-                  <p>Anti-burst stability ball designed for core workouts and posture support at home or office.</p>
-                </CardContent>
-              </Card>
-              <Card className="rounded-2xl shadow-md">
-                <CardContent className="p-6">
-                  <img src="/images/flexicycle.jpg" alt="FlexiCycle" className="rounded-xl mb-4" />
-                  <h2 className="text-2xl font-semibold mb-2">FlexiCycle™</h2>
-                  <p>Compact under-desk cycle machine for light cardio—perfect for WFH users.</p>
-                </CardContent>
-              </Card>
-            </section>
-          </TabsContent>
+    <section class="mt-8">
+      <h2 class="text-3xl font-bold">Products</h2>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="border p-4 rounded">
+          <img src="/images/flexirack.jpg" class="rounded">
+          <h3 class="text-xl font-semibold">FlexiRack™</h3>
+          <p>Foldable wall-mounted gym.</p>
+        </div>
+        <div class="border p-4 rounded">
+          <img src="/images/flexibench.jpg" class="rounded">
+          <h3 class="text-xl font-semibold">FlexiBench™</h3>
+          <p>Multi-angle smart bench.</p>
+        </div>
+        <div class="border p-4 rounded">
+          <img src="/images/fleximat.jpg" class="rounded">
+          <h3 class="text-xl font-semibold">FlexiMat™</h3>
+          <p>Smart yoga mat with AI.</p>
+        </div>
+      </div>
+    </section>
 
-          <TabsContent value="contact">
-            <section className="max-w-xl mx-auto space-y-4">
-              <h2 className="text-3xl font-bold text-center">Contact Us</h2>
-              <p className="text-center">We’re based in Singapore and happy to help with your order, delivery, or feedback.</p>
-              <form className="space-y-4">
-                <Input type="text" placeholder="Your Name" required />
-                <Input type="email" placeholder="Your Email" required />
-                <Textarea placeholder="Your Message or Feedback" rows={5} required />
-                <Button type="submit" className="w-full">Send Message</Button>
-              </form>
-              <div className="text-center mt-6">
-                <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-                <div className="flex justify-center gap-4">
-                  <a href="https://www.instagram.com/flexifit" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/instagram.svg" alt="Instagram" className="h-6 w-6" />
-                  </a>
-                  <a href="https://www.tiktok.com/@flexifit" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/tiktok.svg" alt="TikTok" className="h-6 w-6" />
-                  </a>
-                  <a href="https://www.youtube.com/@flexifit" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/youtube.svg" alt="YouTube" className="h-6 w-6" />
-                  </a>
-                </div>
-              </div>
-            </section>
-          </TabsContent>
-        </Tabs>
-      </main>
+    <section class="mt-8">
+      <h2 class="text-3xl font-bold">Contact Us</h2>
+      <form class="mt-4">
+        <input class="border p-2 w-full rounded" type="text" placeholder="Your Name"><br><br>
+        <input class="border p-2 w-full rounded" type="email" placeholder="Your Email"><br><br>
+        <textarea class="border p-2 w-full rounded" placeholder="Message"></textarea><br><br>
+        <button class="px-4 py-2 bg-indigo-500 text-white rounded">Send</button>
+      </form>
+      <div class="flex justify-center gap-4 mt-4">
+        <a href="https://instagram.com"><img src="/icons/instagram.svg" class="h-6 w-6"></a>
+        <a href="https://tiktok.com"><img src="/icons/tiktok.svg" class="h-6 w-6"></a>
+        <a href="https://youtube.com"><img src="/icons/youtube.svg" class="h-6 w-6"></a>
+      </div>
+    </section>
+  </main>
 
-      <footer className="text-center text-gray-500 text-sm mt-16 pb-10">
-        © 2025 FlexiFit Singapore. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+  <footer class="text-center text-gray-500 text-sm mt-16 pb-10">
+    © 2025 FlexiFit Singapore. All rights reserved.
+  </footer>
+
+</body>
+</html>
